@@ -5,7 +5,7 @@ from django.contrib.auth.models import User,auth
 
 # Create your views here.
 def store(request):
-    products = Product.objects.all()
+    products = Product.objects.all
     context = {'products':products}
     return render(request ,'store.html' , context)
 
