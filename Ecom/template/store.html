@@ -1,0 +1,53 @@
+{% extends 'home.html' %}
+{% load static %}
+{% block content %}
+<head>
+    <style>
+    {
+      box-sizing : border-box;
+    }
+    
+    .column {
+      
+      float: left;
+      width: 33%;
+      padding: 5px;
+    }
+    .box-element{
+        box-shadow:hsl(0, 0%, 80%) 0 0 16px;
+        background-color: #fff;
+        border-radius: 8px;
+        padding: 19px;
+        }
+    .btn{
+        border-radius: 0;
+    }
+    
+    </style>
+    </head>
+        <body>
+        
+        <hr>
+        
+        
+        
+        <hr>
+        <div class="row">
+            {% for product in products %}
+            <div class="column">
+                <img  class="thumbnail" src="{{product.image.url}}" >
+                <div class="box-element product">
+                        <h6><strong>{{product.name}}</strong></h6>
+                        <hr>
+                        <a href="{% url 'cart' %}"> <button  class="btn btn-outline-secondary add-btn">BUY</button></a>
+                        <a class="btn btn-outline-success" href="{{product.image.url}}">View</a>
+                        <h4 style="display: inline-block; float: right"><strong>Rs.{{product.price}}</strong></h4>
+        
+                </div>
+            </div>	
+            {% endfor %}
+        </div>
+        <strong><hr></strong>
+        
+        </body>
+{% endblock content %}

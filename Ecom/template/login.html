@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>login</title>
+<style>
+
+   body{
+
+		margin:0;
+		padding:0;
+		background-color:powderblue;
+	}
+	.container{
+	    top:50%;
+		left:50%;
+		position:absolute;
+		transform:translate(-50%,-50%);
+		}
+	.card{
+		padding:60px 40px 50px 40px;
+		background-color:;
+		border-radius:8px;
+		}
+	#name{
+	border:none;
+	background:transparent;
+	border-bottom:1px solid white;
+	padding:10px;
+	margin-bottom:15px;
+	}	
+	#button{
+	margin-left:10px;
+	border-radius:5px;
+	}
+	a{
+	font-size:13px;
+	} 
+</style>
+</head>
+<body>
+<form method="POST">
+{% csrf_token %}
+<div class="container" >
+	<div class="card" >
+	    <h1>Login</h1>
+		<input type="text" name="username" placeholder="username"id="name"><br>
+		<input type="password" name="password" placeholder="Password"id="name"><br><br>
+		<label class="text-danger">{{msg}}</label><br>
+        <input type="submit" value="Submit" id="button">
+	</div>
+</div>
+</form>
+</body>
+
+</html>
